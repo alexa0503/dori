@@ -67,11 +67,11 @@ class DefaultController extends Controller
 				$return['msg'] = '该手机号已经提交过信息啦';
 			}
 			elseif( null == $request->get('mobile')){
-				$return['ret'] = 1004;
+				$return['ret'] = 1001;
 				$return['msg'] = '手机不能为空';
 			}
 			elseif ( !preg_match("/^1\d{10}$/", $request->get('mobile')) ){
-				$return['ret'] = 1005;
+				$return['ret'] = 1006;
 				$return['msg'] = '手机不正确';
 			}
 			elseif( null == $request->get('email')){
