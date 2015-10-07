@@ -66,7 +66,14 @@ class DefaultController extends Controller
 				$return['ret'] = 1200;
 				$return['msg'] = '该手机号已经提交过信息啦';
 			}
-			/*
+			elseif( null == $request->get('mobile')){
+				$return['ret'] = 1004;
+				$return['msg'] = '手机不能为空';
+			}
+			elseif ( !preg_match("/^1\d{10}$/", $request->get('mobile')) ){
+				$return['ret'] = 1005;
+				$return['msg'] = '手机不正确';
+			}
 			elseif( null == $request->get('email')){
 				$return['ret'] = 1002;
 				$return['msg'] = 'Email不能为空';
@@ -75,18 +82,13 @@ class DefaultController extends Controller
 				$return['ret'] = 1003;
 				$return['msg'] = 'Email不正确';
 			}
-			*/
 			elseif( null == $request->get('address')){
 				$return['ret'] = 1004;
-				$return['msg'] = '地址不能为空';
+				$return['msg'] = '所在地不能为空';
 			}
-			elseif( null == $request->get('mobile')){
+			elseif( null == $request->get('company')){
 				$return['ret'] = 1004;
-				$return['msg'] = '手机不能为空';
-			}
-			elseif ( !preg_match("/^1\d{10}$/", $request->get('mobile')) ){
-				$return['ret'] = 1005;
-				$return['msg'] = '手机不正确';
+				$return['msg'] = '公司名不能为空';
 			}
 			else{
 				$info = new Entity\Info;
