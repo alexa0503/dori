@@ -250,12 +250,12 @@
 				var email = $('#email').val();
 				var address = $('#address').val();
 				var company = $('#companyname').val();
-				var data = {username:username,mobile:mobile,email:email,address,address,company:company}
+				var postData = {username:username,mobile:mobile,email:email,address,address,company:company}
 				$submit.off().on('click',function(){
 					$.ajax({
 						url : "/post",
 						type : "POST",
-						data : data,
+						data : postData,
 						dataType : "json",
 						success : function (data){	
 							try {

@@ -87,7 +87,7 @@ class DefaultController extends Controller
 				$return['msg'] = '所在地不能为空';
 			}
 			elseif( null == $request->get('company')){
-				$return['ret'] = 1004;
+				$return['ret'] = 1005;
 				$return['msg'] = '公司名不能为空';
 			}
 			else{
