@@ -100,7 +100,7 @@ class DefaultController extends Controller
 				$info->setMobile($request->get('mobile'));
 				$info->setAddress($request->get('address'));
 				$info->setEmail($request->get('email'));
-				$info->setMobile($request->get('company'));
+				$info->setCompany($request->get('company'));
 				$info->setCreateIp($request->getClientIp());
 				$info->setCreateTime(new \DateTime('now'));
 				$em->persist($info);
