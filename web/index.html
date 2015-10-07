@@ -1,0 +1,438 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<title>谁来一起coffee time？和互联网大咖面对面，机会千载难逢！</title>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+<script type="text/javascript" src="js/jquery.imgpreload.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><script type="text/javascript" src="js/wx.js"></script>
+<script type="text/javascript">
+    $().ready(function(){
+        $.getJSON('/sign',{url:location.href},function(data){
+            wxShare(data);
+        })
+    })
+</script>
+</head>
+
+<body>
+<div style="display:none"><img src="images/share.jpg"/></div>
+<img src="images/action1.png" width="100%" class="a1"/>
+<img src="images/loading.png" width="100%" class="loading"/>
+
+<div class="container">
+	<div id="tips" onClick="$(this).css('display','none');"><img src="images/tip.png" width="80%"/></div>
+	<img src="images/music.png" class="music1" width="100%" style="position:absolute; z-index:101; top:2%; cursor:pointer"/>
+	<img src="images/music_off.png" class="music2" width="100%" style="position:absolute; z-index:100; top:2%; cursor:pointer; display:none"/>
+    <img src="images/arrow.png" class="up" width="100%" style="position:absolute; z-index:100; bottom:0; display:none"/>
+    
+	<div class="move">
+		<div class="action1 action"></div>
+       
+        <div class="action2 action">
+        	<img src="images/a2_p1.png" width="100%" class="title"/>
+            <div class="dot"><img src="images/a2_p2.png" width="100%" class="dotm"/></div>
+            <img src="images/a2_p3.png" width="100%" class="content"/>
+        </div>
+        
+        <div class="action3 action">
+        	<img src="images/a3_p1.png" width="100%" class="a3_1"/>
+            <img src="images/a3_p2.png" width="100%" class="a3_2 xuan"/>
+            <img src="images/a3_p3.png" width="100%" class="a3_3"/>
+            <img src="images/a3_p4.png" width="100%" class="a3_4"/>
+            <img src="images/a3_p5.png" width="100%" class="a3_5"/>
+			<img src="images/a3_p6.png" width="100%" class="a3_6"/>
+        </div>
+        
+        
+        <div class="action4 action">
+        	<img src="images/a4_p1.png" width="100%" class="a4_1"/>
+            <img src="images/a4_p2.png" width="90%" class="a4_2"/>
+            <img src="images/a4_p3.png" width="90%" class="a4_3"/>
+            <img src="images/a4_p4.png" width="90%" class="a4_4"/>
+            <img src="images/a4_p5.png" width="90%" class="a4_5"/>
+        </div>
+        
+        <div class="action5 action">
+        	<img src="images/a4_p1.png" width="100%" class="a5_1"/>
+            <img src="images/a5_p1.png" width="90%" class="a5_2"/>
+            <img src="images/a5_p2.png" width="90%" class="a5_3"/>
+            <img src="images/a5_p3.png" width="90%" class="a5_4"/>
+            <img src="images/a5_p4.png" width="90%" class="a5_5"/>
+        </div>
+        
+        <div class="action6 action">
+        	<img src="images/a6_p1.png" width="100%" class="a6_1"/>
+            <img src="images/a6_p2.png" width="100%" class="a6_2"/>
+        	<img src="images/a6_p3.png" width="100%" class="a6_3"/>
+        </div>
+        
+        <div class="action7 action">
+        	<img src="images/a7_p1.png" width="100%" class="a7_1"/>
+            <img src="images/a3_p2.png" width="100%" class="a7_2 xuan"/>
+            <img src="images/a7_p2.png" width="100%" class="a7_3"/>
+        </div>
+        
+        <div class="action8 action">
+        	<img src="images/a8_p1.png" width="100%" class="a8_1"/>
+            <img src="images/a8_p2.png" width="100%" class="a8_2"/>
+        	<img src="images/a8_p3.png" width="100%" class="a8_3"/>
+            <img src="images/a8_p4.png" width="100%" class="a8_4"/>
+            <img src="images/a8_p5.png" width="100%" class="a8_5 dotm"/>
+            <img src="images/a8_p6.png" width="100%" class="a8_6"/>
+        </div>
+        
+        <div class="action9 action">
+        	<img src="images/a9_p1.png" width="100%" class="a9_1"/>
+            <img src="images/a9_p2.png" width="100%" class="a9_2"/>
+        	<img src="images/a9_p3.png" width="100%" class="a9_3 smallmove"/>
+            <img src="images/a9_p4.png" width="100%" class="a9_4"/>
+            <img src="images/a9_p5.png" width="100%" class="a9_5 bigmove" onClick="$('#tips').css('display','block')"/>
+            <img src="images/a9_p6.png" width="100%" class="a9_6"/>
+        </div>
+        
+        <div class="action10 action">
+        	<img src="images/a10_p1.png" width="100%" class="a10_1"/>
+            <img src="images/a10_p2.png" width="100%" class="a10_2"/>
+        	<img src="images/a10_p3.png" width="100%" class="a10_3"/>
+        </div>
+        
+         <div class="action11 action">
+        	<img src="images/a11_p1.png" width="90%" class="a11_1"/>
+            <div class="a11_2">
+            	<p>填写报名信息：</p>
+                <p><span>姓 名：</span><input name="name" id="name" type="text"></p>
+                <p><span>手 机：</span><input name="phone" id="phone" type="text"></p>
+                <p><span>邮 箱：</span><input name="email" id="email" type="text"></p>
+                <p><span>公司名：</span><input name="companyname" id="companyname" type="text"></p>
+                <p><span>所在地：</span><input name="address" id="address" type="text"></p>
+                <p class="last">（报名截止日期：2015年10月10日<br>卓易科技拥有该活动最终解释权）</p>
+            </div>
+            <div class="a11_3"><img src="images/btn1.png" width="41%" class="submit"/><img src="images/btn2.png" width="18%" class="reset"/><img src="images/btn3.png" width="41%" class="back"/></div>
+        </div>
+        
+    </div>
+</div>
+
+
+<script type="text/javascript">
+var JS = {
+	pageNum : 1,
+	move : $('.move'),
+	action : $('.action'),
+	up : $('.up'),
+	winHeight : $(window).height(),
+	actionImgDiv : $('.action').find('>img,div'),
+	xuan : $('.action').find('.xuan'),
+	next : false,
+	
+	init : function(){
+		var self = this;
+		$('.container').css('height',self.winHeight+ 'px');
+		this.action.css('height',self.winHeight+ 'px');
+		var music = new this.soundplayer('sound.mp3',true);
+		music.play();
+		$('.music1').off().on('click',function(){
+			music.pause();
+			$(this).css('display','none')
+			$('.music2').css('display','block')
+		})
+		$('.music2').off().on('click',function(){
+			music.play();
+			$(this).css('display','none')
+			$('.music1').css('display','block')
+		})
+	},
+	
+	action2 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.action2 .title').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.action2 .dot').animate({top:"35%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.action2 .content').animate({top:"45%",opacity:1 },1000,function(){self.next = true;})},2000)
+	},
+	
+	
+	action3 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a3_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a3_5').animate({top:"25%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a3_6').animate({top:"25%",opacity:1 },1000)},2000)
+		setTimeout(function(){$('.a3_3').animate({top:"68%",opacity:1 },1000)},2500)
+		setTimeout(function(){$('.a3_4').animate({top:"84%",opacity:1 },1000,function(){self.next = true;})},3000)
+	},
+	
+	action4 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a4_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a4_2').animate({top:"22%",opacity:1 },1000)},2000)
+		setTimeout(function(){$('.a4_3').animate({left:"5%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a4_4').animate({left:"5%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a4_5').animate({top:"68%",opacity:1 },1000,function(){self.next = true;})},2000)
+	},
+	
+	action5 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a5_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a5_2').animate({top:"22%",opacity:1 },1000)},2000)
+		setTimeout(function(){$('.a5_3').animate({left:"5%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a5_4').animate({left:"5%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a5_5').animate({top:"68%",opacity:1 },1000,function(){self.next = true;})},2000)
+	},
+	
+	action6 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a6_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a6_2').animate({top:"23%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a6_3').animate({top:"71%",opacity:1 },1000,function(){self.next = true;})},2000)
+	},
+	
+	action7 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a7_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a7_3').animate({top:"23%",opacity:1 },1000,function(){self.next = true;})},1500)
+	},
+	
+	action8 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a8_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a8_2').animate({top:"22%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a8_6').animate({top:"22%",opacity:1 },1000)},2000)
+		setTimeout(function(){$('.a8_3').animate({top:"53%",opacity:1 },1000)},2500)
+		setTimeout(function(){$('.a8_4').animate({top:"69%",opacity:1 },1000)},3000)
+		setTimeout(function(){$('.a8_5').animate({top:"71%",opacity:1 },1000,function(){self.next = true;})},3500)
+	},
+	
+	action9 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a9_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a9_2').animate({top:"18%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a9_3').animate({top:"49%",opacity:1 },1000)},2000)
+		setTimeout(function(){$('.a9_4').animate({top:"64%",opacity:1 },1000)},2500)
+		setTimeout(function(){$('.a9_5').animate({top:"72%",opacity:1 },1000)},3000)
+		setTimeout(function(){$('.a9_6').animate({top:"80%",opacity:1 },1000,function(){self.next = true;})},3500)
+	},
+	
+	action10 : function(){
+		var self = this;
+		setTimeout(function(){$('.a10_1').animate({top:"7%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a10_2').animate({top:"22%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a10_3').animate({top:"78%",opacity:1 },1000,function(){self.next = true;})},2000)
+	},
+	
+	action11 : function(){
+		var self = this;
+		self.next = false;
+		setTimeout(function(){$('.a11_1').animate({top:"5%",opacity:1 },1000)},1000)
+		setTimeout(function(){$('.a11_2').animate({marginTop:"72%",opacity:1 },1000)},1500)
+		setTimeout(function(){$('.a11_3').animate({top:"86%",opacity:1 },1000,function(){self.next = true;})},2000)
+	},
+	
+	formSubmit : function(){
+		var self = this;
+		var $submit = $('.submit');
+		var $reset = $('.reset');
+		var $back = $('.back');
+		
+		//提交代码
+		$submit.off().on('click',function(){
+			$.ajax({
+				url : "",
+				type : "POST",
+				data : '',
+				contentType : "application/json",
+				success : function (data){	
+					try {
+						
+					}catch(e){
+						console.log(e)
+					}
+				},
+				error : function (){
+				    alert('提交失败，请重新提交！'); 
+				}
+			});
+		})
+		
+		$reset.off().on('click',function(){
+			$('#name').val('');
+			$('#phone').val('');
+			$('#email').val('');
+			$('#companyname').val('');
+			$('#address').val('');
+		})
+		
+		$back.off().on('click',function(){
+			self.Go(true);
+		})
+	},
+	
+	resetDom : function(){
+		this.actionImgDiv.css('opacity',0)
+		this.xuan.css('opacity',1)
+	},
+	
+	Go : function( isback ){
+		var self = this;
+		if( isback ){
+			self.pageNum = 1;
+			self.resetDom()
+		}
+		$('.loading').fadeOut(100).removeClass('loading');
+		$('.a1').animate({top:"-70%"},1000,function(){$(this).css('display','none')});
+		
+		this.swipe();
+		this.bodyClick();
+		this.moveto(1);
+		self.action2();
+		this.up.fadeIn(500)
+	},
+	
+	
+	
+	nextShow : function( direction ){
+		var self = this;
+		//if(self.pageNum >=10 || self.pageNum < 1) return;
+		if( self.pageNum ==10 && direction == "up") return;
+		if(this.next){
+		
+			if(direction == "up" && self.pageNum <10) self.pageNum ++;
+			if(direction == "down" && self.pageNum >1) self.pageNum --; 
+
+			self.moveto(self.pageNum,function(){
+				self.resetDom();	
+			});
+			console.log(self.pageNum)
+			switch(self.pageNum){
+				case 1:
+					self.action2();
+				break;
+				case 2:
+					self.action3();
+				break;
+				case 3:
+					self.action4();
+				break;
+				case 4:
+					self.action5();
+				break;
+				case 5:
+					self.action6();
+				break;
+				case 6:
+					self.action7();
+				break;
+				case 7:
+					self.action8();
+				break;
+				case 8:
+					self.action9();
+				break;
+				case 9:
+					self.action10();
+				break;
+				case 10:
+					self.action11();
+					self.up.fadeOut(300);
+					self.formSubmit();
+				break;
+			}
+		}
+	},
+	
+	bodyClick : function(){
+		var self = this;
+		self.action.off().on('click',function(event){
+			if($(event.target).attr('class') == "a9_5 bigmove") return;
+			self.nextShow("up")
+		})
+	},
+	
+	soundplayer : function( src, loop ){
+		var player = document.createElement('audio');
+		player.id = "sound";
+		player.style.display = "none";
+		player.src = src;
+		player.loop = loop;
+		
+		$('body').append(player);
+		
+		this.play = function(){
+			player.play();
+		}
+		this.pause = function(){
+			player.pause();
+		}
+	},
+	
+	moveto : function( num, callback ){
+		var self = this;
+		self.move.animate({transform: 'translateY('+ - (Number(num)*self.winHeight) +'px)'},{duration:1500, easing:'easeOutExpo',complete : callback })
+	},
+	
+	
+	swipe : function(){
+		var self = this;
+		$('.container').swipe({
+			swipe:function(event, direction, distance, duration, fingerCount) {
+				if(direction == "up"){
+					self.nextShow("up")
+				}
+				if(direction == "down"){
+					self.nextShow('down')
+				}
+			}
+		});
+	},
+	
+	vibrate : function(){
+		navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+		if (navigator.vibrate) {
+			navigator.vibrate(200);
+		}else{
+			//alert('您的浏览器不支持HTML5震动！');
+		}
+	}
+}
+JS.init();
+
+var loader = {
+	init : function(){
+		var imgNum = 0;
+		var the_images = [];
+		var imgs = $('img');
+		
+		for (var i = 0; i < imgs.length; i++) {
+			the_images.push(imgs[i].src);
+		}
+		$.imgpreload(the_images,{
+			each: function () {
+				var status = $(this).data('loaded') ? 'success' : 'error';
+				if (status == "success") {                
+					var v = (parseFloat(++imgNum) / the_images.length).toFixed(2);
+					//span.css('width',Math.round(v * 100) + "%");
+				}
+			},
+			all: function () {
+				setTimeout(function(){ JS.Go(false); },2000)
+			}
+		});
+	}
+}
+loader.init();
+window.addEventListener('touchmove', function (e) { e.preventDefault();e.stopPropagation(); }, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,html,div,p,ul,li { margin:0; padding:0;-webkit-text-size-adjust: none;}
+body,html { background:#ef7800; height:100%}
+img { border:0}
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0);	}
+
+
+.move { position:absolute; width:100%; top:0; left:0;}
+.action { position: relative; left:0; width:100%; background:#ef7800; overflow:hidden}
+.container { position:absolute; top:0; left:0; width:100%; overflow:hidden}
+
+.a1 { position:absolute; z-index:1; top:35%}
+.loading { position:absolute; z-index:2; top:38%; -webkit-animation:loading 1s linear 0s infinite; animation:loading 1s linear 0s infinite;}
+@-webkit-keyframes loading {
+  0% {	
+  	  top: 38%; 
+	  opacity: 1; 
+  }
+  100% {	
+  	  top: 32%; 
+	  opacity: 0; 
+  }
+}
+@keyframes loading {
+  0% {	
+  	  top: 38%; 
+	  opacity: 1; 
+  }
+  100% {	
+  	  top: 32%; 
+	  opacity: 0; 
+  }
+}
+
+
+.action2 .title { position:absolute; top:9%; opacity :0}
+.action2 .dot { position:absolute; width:100%; text-align:center; top:37%; opacity :0}
+.action2 .content { position:absolute;  top:47%; opacity :0}
+
+.action3 .a3_1 { position:absolute; top:9%; opacity :0; z-index:2}
+.action3 .a3_2 { position:absolute; top:20%; z-index:1; }
+.action3 .a3_3 { position:absolute; top:70%; opacity :0; z-index:2}
+.action3 .a3_4 { position:absolute; top:86%; opacity :0; z-index:2}
+.action3 .a3_5 { position:absolute; top:27%; opacity :0; z-index:2}
+.action3 .a3_6 { position:absolute; top:27%; opacity :0; z-index:2}
+
+
+.action4 .a4_1 { position:absolute; top:9%; opacity :0}
+.action4 .a4_2 { position:absolute; top:10%; left:5%; opacity :0}
+.action4 .a4_3 { position:absolute; top:39%; left:-85%; opacity :0}
+.action4 .a4_4 { position:absolute; top:56%; left:100%; opacity :0}
+.action4 .a4_5 { position:absolute; top:100%; left:5%; opacity :0}
+
+.action5 .a5_1 { position:absolute; top:9%; opacity :0}
+.action5 .a5_2 { position:absolute; top:10%; left:5%; opacity :0}
+.action5 .a5_3 { position:absolute; top:39%; left:-85%; opacity :0}
+.action5 .a5_4 { position:absolute; top:56%; left:100%; opacity :0}
+.action5 .a5_5 { position:absolute; top:100%; left:5%; opacity :0}
+
+.action6 .a6_1 { position:absolute; top:9%; opacity :0}
+.action6 .a6_2 { position:absolute; top:25%; opacity :0}
+.action6 .a6_3 { position:absolute; top:73%; opacity :0}
+
+
+.action7 .a7_1 { position:absolute; top:9%; opacity :0; z-index:2}
+.action7 .a7_2 { position:absolute; top:28%; z-index:1}
+.action7 .a7_3 { position:absolute; top:25%; opacity :0; z-index:2}
+
+.action8 .a8_1 { position:absolute; top:9%; opacity :0}
+.action8 .a8_2 { position:absolute; top:24%; opacity :0}
+.action8 .a8_3 { position:absolute; top:55%; opacity :0}
+.action8 .a8_4 { position:absolute; top:71%; opacity :0}
+.action8 .a8_5 { position:absolute; top:69%; opacity :0}
+.action8 .a8_6 { position:absolute; top:24%; opacity :0}
+
+.action9 .a9_1 { position:absolute; top:9%; opacity :0}
+.action9 .a9_2 { position:absolute; top:20%; opacity :0}
+.action9 .a9_3 { position:absolute; top:51%; opacity :0}
+.action9 .a9_4 { position:absolute; top:66%; opacity :0}
+.action9 .a9_5 { position:absolute; top:74%; opacity :0}
+.action9 .a9_6 { position:absolute; top:80%; opacity :0}
+.smallmove { -webkit-animation:smallmove 1s linear 0s infinite; animation:smallmove 1s linear 0s infinite;}
+@-webkit-keyframes smallmove {
+  0% {	
+  	  top: 49%; 
+  }
+  50% {	
+  	  top: 49.5%; 
+  }
+  100% {	
+  	  top: 49%; 
+  }
+}
+@keyframes smallmove {
+  0% {	
+  	  top: 49%; 
+  }
+  50% {	
+  	  top: 49.5%; 
+  }
+  100% {	
+  	  top: 49%; 
+  }
+}
+.bigmove { -webkit-animation:bigmove 5s linear 3s infinite alternate; animation:bigmove 5s linear 3s infinite alternate;}
+@-webkit-keyframes bigmove {
+  0% {	
+  	  top: 72%; 
+  }
+  5% {	
+  	   top: 73%; 
+  }
+  10% {	
+  	   top: 72%; 
+  }
+  90% {	
+  	   top: 72%; 
+  }
+  95% {	
+  	   top: 73%; 
+  }
+  100% {	
+  	   top: 72%; 
+  }
+}
+@keyframes bigmove {
+  0% {	
+  	  top: 72%; 
+  }
+  5% {	
+  	   top: 73%; 
+  }
+  10% {	
+  	   top: 72%; 
+  }
+  90% {	
+  	   top: 72%; 
+  }
+  95% {	
+  	   top: 73%; 
+  }
+  100% {	
+  	   top: 72%; 
+  }
+}
+
+#tips {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 20000;
+	text-align:right;
+}
+.action10 .a10_1 { position:absolute; top:9%; opacity :0}
+.action10 .a10_2 { position:absolute; top:24%; opacity :0}
+.action10 .a10_3 { position:absolute; top:80%; opacity :0}
+
+.action11 .a11_1 { position:absolute; left:5%; top:7%; opacity :0}
+.action11 .a11_2 { margin:74% auto 0 auto; width:220px; opacity :0}
+.action11 .a11_2 p { padding-bottom:6px; padding-left:20px;  font-size:18px; color:#fff; font-family:"黑体"; display:block;}
+.action11 .a11_2 p.last { font-size:14px; padding-left:0;}
+.action11 .a11_2 p span { display:inline-block; width:80px}
+.action11 .a11_2 p input { width:100px; height:12px;}
+.action11 .a11_3 { position:absolute; top:88%; opacity :0}
+
+.dotm { -webkit-animation:dotm 1s linear 0s infinite; animation:dotm 1s linear 0s infinite;}
+@-webkit-keyframes dotm {
+  0% {	
+  	  -webkit-transform-origin: center bottom;
+	  -webkit-transform: scale(1,1);
+  }
+  50% {	
+  	  -webkit-transform-origin: center bottom;
+	  -webkit-transform: scale(1.2,1.2);
+  }
+  100% {
+  	  -webkit-transform-origin: center bottom;
+	  -webkit-transform: scale(1,1);
+  }
+}
+@keyframes dotm {
+  0% {	
+  	  -webkit-transform-origin: center bottom;
+	  -webkit-transform: scale(1,1);
+  }
+  50% {	
+  	  -webkit-transform-origin: center bottom;
+	  -webkit-transform: scale(1.2,1.2);
+  }
+  100% {
+  	  -webkit-transform-origin: center bottom;
+	  -webkit-transform: scale(1,1);
+  }
+}
+
+
+.xuan { -webkit-animation:xuan 13s linear 0s infinite; animation:xuan 13s linear 0s infinite;}
+@-webkit-keyframes xuan {
+  0% {	
+  	  -webkit-transform-origin: center center;
+	  -webkit-transform: rotate(0deg);
+  }
+  100% {
+  	  -webkit-transform-origin: center center;
+	  -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes xuan {
+  0% {	
+  	  -webkit-transform-origin: center center;
+	  -webkit-transform: rotate(0deg);
+  }
+  100% {
+  	  -webkit-transform-origin: center center;
+	  -webkit-transform: rotate(360deg);
+  }
+}
+
+
+
+@media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){ /* 兼容iphone4/4s */
+
+}
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){ /* 兼容iphone5/5s */
+
+}
+
+
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){ /* 兼容iphone6+ */
+
+}
