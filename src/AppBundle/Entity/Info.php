@@ -141,4 +141,27 @@ class Info
     {
         return $this->createIp;
     }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Info
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
 }
