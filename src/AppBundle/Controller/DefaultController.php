@@ -68,7 +68,7 @@ class DefaultController extends Controller
 			}
 			elseif( null == $request->get('username')){
 				$return['ret'] = 1006;
-				$return['msg'] = '用户名不能为空';
+				$return['msg'] = '姓名不能为空';
 			}
 			elseif( null == $request->get('mobile')){
 				$return['ret'] = 1001;
@@ -101,7 +101,6 @@ class DefaultController extends Controller
 				$info->setAddress($request->get('address'));
 				$info->setEmail($request->get('email'));
 				$info->setCompany($request->get('company'));
-				//
 				$info->setCreateIp($request->getClientIp());
 				$info->setCreateTime(new \DateTime('now'));
 				$em->persist($info);
