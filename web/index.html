@@ -118,6 +118,9 @@
 
 		</div>
 	</div>
+	<div style="display:none;">
+<script src="http://s11.cnzz.com/z_stat.php?id=1256507362&web_id=1256507362" language="JavaScript"></script>
+</div>
 
 
 	<script type="text/javascript">
@@ -255,6 +258,9 @@
 					var postData = {username:username,mobile:mobile,email:email,address,address,company:company}
 					$.post("/post",postData,function(json){
 						alert(json.msg);
+						if(json.ret == 0){
+							//window.location.reload()
+						}
 					},"JSON")
 					/*
 					$.ajax({
@@ -286,7 +292,8 @@
 				})
 
 				$back.off().on('click',function(){
-					self.Go(true);
+					//self.Go(true);
+					window.location.reload()
 				})
 			},
 
