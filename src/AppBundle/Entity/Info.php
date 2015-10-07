@@ -15,6 +15,10 @@ class Info
      */
     protected $id;
    
+    /**
+     * @ORM\Column(name="username",type="string", length=120)
+     */
+    protected $username;
 
     /**
      * @ORM\Column(name="address",type="string", length=120)

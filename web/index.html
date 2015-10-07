@@ -255,8 +255,9 @@
 					$.ajax({
 						url : "/post",
 						type : "POST",
-						data : postData,
+						data : $.param(postData),
 						dataType : "json",
+						contentType: "application/json", 
 						success : function (data){	
 							try {
 								alert(data.msg)

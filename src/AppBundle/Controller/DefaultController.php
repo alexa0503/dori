@@ -66,6 +66,10 @@ class DefaultController extends Controller
 				$return['ret'] = 1200;
 				$return['msg'] = '该手机号已经提交过信息啦';
 			}
+			elseif( null == $request->get('username')){
+				$return['ret'] = 1006;
+				$return['msg'] = '用户名不能为空';
+			}
 			elseif( null == $request->get('mobile')){
 				$return['ret'] = 1001;
 				$return['msg'] = '手机不能为空';
@@ -92,8 +96,11 @@ class DefaultController extends Controller
 			}
 			else{
 				$info = new Entity\Info;
-				$info->setAddress($request->get('address'));
+				$info->setUsername($request->get('username'));
 				$info->setMobile($request->get('mobile'));
+				$info->setAddress($request->get('address'));
+				$info->setEmail($request->get('email'));
+				$info->setMobile($request->get('company'));
 				$info->setCreateIp($request->getClientIp());
 				$info->setCreateTime(new \DateTime('now'));
 				$em->persist($info);
