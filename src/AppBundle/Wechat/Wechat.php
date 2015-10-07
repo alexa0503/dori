@@ -13,8 +13,9 @@ class Wechat {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
         $this->request = new Request();
-        $this->path = $this->request->getBasePath();
+        //$this->path = $this->request->getBasePath();
         $this->path = '/alidata1/www/luolai/src/AppBundle/Wechat/';
+        var_dump($this->path);
     }
 
     public function getSignPackage($url = null) {
