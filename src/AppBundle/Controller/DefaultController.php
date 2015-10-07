@@ -101,6 +101,7 @@ class DefaultController extends Controller
 				$info->setAddress($request->get('address'));
 				$info->setEmail($request->get('email'));
 				$info->setCompany($request->get('company'));
+				//
 				$info->setCreateIp($request->getClientIp());
 				$info->setCreateTime(new \DateTime('now'));
 				$em->persist($info);
