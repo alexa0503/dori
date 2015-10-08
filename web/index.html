@@ -261,7 +261,7 @@
 					var email = $('#email').val();
 					var address = $('#address').val();
 					var company = $('#companyname').val();
-					var postData = {username:username,mobile:mobile,email:email,address,address,company:company}
+					var postData = {username:username,mobile:mobile,email:email,address:address,company:company}
 					$.post("/post",postData,function(json){
 						alert(json.msg);
 						if(json.ret == 0){
