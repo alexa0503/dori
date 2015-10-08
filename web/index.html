@@ -228,8 +228,13 @@
 				setTimeout(function(){$('.a9_6').animate({top:"80%",opacity:1 },1000,function(){
 					self.next = true;
 				    $('.a9_3').off().on('click',function(){
-						self.pageNum = 9;
-						self.nextShow("up")
+						self.pageNum = 10;
+						self.moveto(self.pageNum,function(){
+							self.resetDom();	
+						});
+						self.action11();
+						self.up.fadeOut(300);
+						self.formSubmit();
 					})
 				})},3000)
 			},
@@ -330,9 +335,10 @@
 				var self = this;
 		//if(self.pageNum >=10 || self.pageNum < 1) return;
 		if( self.pageNum ==10 && direction == "up") return;
+		if( self.pageNum ==10 && direction == "down") return;
 		if(this.next){
 			
-			if(direction == "up" && self.pageNum <10) self.pageNum ++;
+			if(direction == "up" && self.pageNum <9) self.pageNum ++;
 			if(direction == "down" && self.pageNum >1) self.pageNum --; 
 
 			self.moveto(self.pageNum,function(){
@@ -367,11 +373,7 @@
 				case 9:
 				self.action10();
 				break;
-				case 10:
-				self.action11();
-				self.up.fadeOut(300);
-				self.formSubmit();
-				break;
+				
 			}
 		}
 	},
