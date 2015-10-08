@@ -77,31 +77,31 @@ img { border:0}
 
 .action9 .a9_1 { position:absolute; top:9%; opacity :0}
 .action9 .a9_2 { position:absolute; top:20%; opacity :0}
-.action9 .a9_3 { position:absolute; top:51%; opacity :0}
+.action9 .a9_3 { position:absolute; top:54%; opacity :0}
 .action9 .a9_4 { position:absolute; top:66%; opacity :0}
-.action9 .a9_5 { position:absolute; top:74%; opacity :0}
+.action9 .a9_5 { position:absolute; top:70%; opacity :0}
 .action9 .a9_6 { position:absolute; top:80%; opacity :0}
 .smallmove { -webkit-animation:smallmove 1s linear 0s infinite; animation:smallmove 1s linear 0s infinite;}
 @-webkit-keyframes smallmove {
   0% {	
-  	  top: 49%; 
+  	  top: 52%; 
   }
   50% {	
-  	  top: 49.5%; 
+  	  top: 52.5%; 
   }
   100% {	
-  	  top: 49%; 
+  	  top: 52%; 
   }
 }
 @keyframes smallmove {
   0% {	
-  	  top: 49%; 
+  	  top: 52%; 
   }
   50% {	
-  	  top: 49.5%; 
+  	  top: 52.5%; 
   }
   100% {	
-  	  top: 49%; 
+  	  top: 52%; 
   }
 }
 .bigmove { -webkit-animation:bigmove 5s linear 3s infinite alternate; animation:bigmove 5s linear 3s infinite alternate;}

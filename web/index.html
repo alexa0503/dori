@@ -91,7 +91,7 @@
 				<img src="images/a9_p1.png" width="100%" class="a9_1"/>
 				<img src="images/a9_p2.png" width="100%" class="a9_2"/>
 				<img src="images/a9_p3.png" width="100%" class="a9_3 smallmove"/>
-				<img src="images/a9_p4.png" width="100%" class="a9_4"/>
+				<!--<img src="images/a9_p4.png" width="100%" class="a9_4"/>-->
 				<img src="images/a9_p5.png" width="100%" class="a9_5 bigmove" onClick="$('#tips').css('display','block')"/>
 				<img src="images/a9_p6.png" width="100%" class="a9_6"/>
 			</div>
@@ -222,10 +222,16 @@
 				self.next = false;
 				setTimeout(function(){$('.a9_1').animate({top:"7%",opacity:1 },1000)},1000)
 				setTimeout(function(){$('.a9_2').animate({top:"18%",opacity:1 },1000)},1500)
-				setTimeout(function(){$('.a9_3').animate({top:"49%",opacity:1 },1000)},2000)
-				setTimeout(function(){$('.a9_4').animate({top:"64%",opacity:1 },1000)},2500)
-				setTimeout(function(){$('.a9_5').animate({top:"72%",opacity:1 },1000)},3000)
-				setTimeout(function(){$('.a9_6').animate({top:"80%",opacity:1 },1000,function(){self.next = true;})},3500)
+				setTimeout(function(){$('.a9_3').animate({top:"52%",opacity:1 },1000)},2000)
+				//setTimeout(function(){$('.a9_4').animate({top:"64%",opacity:1 },1000)},2500)
+				setTimeout(function(){$('.a9_5').animate({top:"68%",opacity:1 },1000)},2500)
+				setTimeout(function(){$('.a9_6').animate({top:"80%",opacity:1 },1000,function(){
+					self.next = true;
+				    $('.a9_3').off().on('click',function(){
+						self.pageNum = 9;
+						self.nextShow("up")
+					})
+				})},3000)
 			},
 			
 			action10 : function(){
