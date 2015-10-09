@@ -40,14 +40,14 @@
 				<img src="images/a2_p3.png" width="100%" class="content"/>
 			</div>
 
-			<div class="action3 action">
+			<!--<div class="action3 action">
 				<img src="images/a3_p1.png" width="100%" class="a3_1"/>
 				<img src="images/a3_p2.png" width="100%" class="a3_2 xuan"/>
 				<img src="images/a3_p3.png" width="100%" class="a3_3"/>
 				<img src="images/a3_p4.png" width="100%" class="a3_4"/>
 				<img src="images/a3_p5.png" width="100%" class="a3_5"/>
 				<img src="images/a3_p6.png" width="100%" class="a3_6"/>
-			</div>
+			</div>-->
 
 
 			<div class="action4 action">
@@ -111,9 +111,9 @@
 					<p><span>邮 箱：</span><input name="email" id="email" type="text"></p>
 					<p><span>公司名：</span><input name="companyname" id="companyname" type="text"></p>
 					<p><span>所在地：</span><input name="address" id="address" type="text"></p>
-					<p class="last">（报名截止日期：2015年10月10日<br>卓易科技拥有该活动最终解释权）</p>
+					<p class="last">（报名截止日期：2015年10月13日<br>卓易科技拥有该活动最终解释权）</p>
 				</div>
-				<div class="a11_3"><img src="images/btn1.png" width="41%" class="submit"/><img src="images/btn2.png" width="18%" class="reset"/><img src="images/btn3.png" width="41%" class="back"/></div>
+				<div class="a11_3" style="width:100%"><img src="images/btn1.png" width="41%" class="submit"/><img src="images/btn2.png" width="18%" class="reset"/><img src="images/btn3.png" width="41%" class="back"/></div>
 			</div>
 
 		</div>
@@ -133,6 +133,7 @@
 			actionImgDiv : $('.action').find('>img,div'),
 			xuan : $('.action').find('.xuan'),
 			next : false,
+			st : true,
 
 			init : function(){
 				var self = this;
@@ -214,7 +215,7 @@
 				setTimeout(function(){$('.a8_6').animate({top:"22%",opacity:1 },1000)},2000)
 				setTimeout(function(){$('.a8_3').animate({top:"53%",opacity:1 },1000)},2500)
 				setTimeout(function(){$('.a8_4').animate({top:"69%",opacity:1 },1000)},3000)
-				setTimeout(function(){$('.a8_5').animate({top:"71%",opacity:1 },1000,function(){self.next = true;})},3500)
+				setTimeout(function(){$('.a8_5').animate({top:"71%",opacity:1 },1000,function(){self.next = true; self.st = true})},3500)
 			},
 			
 			action9 : function(){
@@ -228,7 +229,7 @@
 				setTimeout(function(){$('.a9_6').animate({top:"80%",opacity:1 },1000,function(){
 					self.next = true;
 				    $('.a9_3').off().on('click',function(){
-						self.pageNum = 10;
+						self.pageNum = 9;
 						self.moveto(self.pageNum,function(){
 							self.resetDom();	
 						});
@@ -334,46 +335,42 @@
 			nextShow : function( direction ){
 				var self = this;
 		//if(self.pageNum >=10 || self.pageNum < 1) return;
-		if( self.pageNum ==10 && direction == "up") return;
-		if( self.pageNum ==10 && direction == "down") return;
+		if( self.pageNum ==9 && direction == "up") return;
+		if( self.pageNum ==9 && direction == "down") return;
 		if(this.next){
 			
-			if(direction == "up" && self.pageNum <9) self.pageNum ++;
+			if(direction == "up" && self.pageNum <7) self.pageNum ++;
 			if(direction == "down" && self.pageNum >1) self.pageNum --; 
-
+			
 			self.moveto(self.pageNum,function(){
-				self.resetDom();	
+				if(direction == "down" || self.pageNum != 7) self.resetDom();
 			});
-			console.log(self.pageNum)
+			
 			switch(self.pageNum){
 				case 1:
 				self.action2();
 				break;
 				case 2:
-				self.action3();
-				break;
-				case 3:
 				self.action4();
 				break;
-				case 4:
+				case 3:
 				self.action5();
 				break;
-				case 5:
+				case 4:
 				self.action6();
 				break;
-				case 6:
+				case 5:
 				self.action7();
 				break;
-				case 7:
+				case 6:
 				self.action8();
 				break;
-				case 8:
-				self.action9();
+				case 7:
+				self.up.fadeOut(300);
+				console.log(self.pageNum)
+				if(self.st) self.action9();
+				self.st = false
 				break;
-				case 9:
-				self.action10();
-				break;
-				
 			}
 		}
 	},
@@ -417,6 +414,9 @@
 					self.nextShow("up")
 				}
 				if(direction == "down"){
+					if(self.pageNum == 7){
+						$('.action8').find('>img,div').css('opacity',0)
+					}
 					self.nextShow('down')
 				}
 			}
