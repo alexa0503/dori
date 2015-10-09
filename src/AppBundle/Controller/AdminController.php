@@ -68,15 +68,19 @@ class AdminController extends Controller
 					->setCellValue('A1', 'ID')
 					->setCellValue('B1', 'Email')
 					->setCellValue('C1', '手机号')
-					->setCellValue('D1', '提交时间')
-					->setCellValue('E1', '提交IP');
+					->setCellValue('D1', '地址')
+					->setCellValue('E1', '公司名')
+					->setCellValue('F1', '提交时间')
+					->setCellValue('G1', '提交IP');
 				foreach($infos as $k=>$v){
 						$phpExcelObject->setActiveSheetIndex(0)
 							->setCellValue('A'.($k+2), $v->getId())
 							->setCellValue('B'.($k+2), $v->getEmail())
 							->setCellValue('C'.($k+2), $v->getMobile())
-							->setCellValue('D'.($k+2), $v->getCreateTime()->format('Y-m-d H:i:s'))
-							->setCellValue('E'.($k+2), $v->getCreateIp());
+							->setCellValue('D'.($k+2), $v->getAddress())
+							->setCellValue('E'.($k+2), $v->getCompany())
+							->setCellValue('F'.($k+2), $v->getCreateTime()->format('Y-m-d H:i:s'))
+							->setCellValue('G'.($k+2), $v->getCreateIp());
 				}
 
 				$phpExcelObject->getActiveSheet()->setTitle('用户信息');

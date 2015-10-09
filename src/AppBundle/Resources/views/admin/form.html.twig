@@ -12,6 +12,8 @@
         <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1" style="width: 40px;">ID</th>
         <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1">Email</th>
         <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1">手机号</th>
+        <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1">地址</th>
+        <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1">公司</th>
         <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1">创建时间</th>
         <th tabindex="0" aria-controls="table2" rowspan="1" colspan="1">创建IP</th>
       </tr>
@@ -22,6 +24,8 @@
         <td>{{ p.id }}</td>
         <td>{{ p.email }}</td>
         <td>{{ p.mobile }}</td>
+        <td>{{ p.address }}</td>
+        <td>{{ p.company }}</td>
           <td>{{ p.createTime | date("Y-m-d H:i:s") }}</td>
           <td>{{ p.createIp }}</td>
       </tr>
